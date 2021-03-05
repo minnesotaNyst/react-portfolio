@@ -7,12 +7,10 @@ import ContactForm from './components/Contact';
 function App() {
   const [categories] = useState([
     {
-      name: 'commercial',
-      description: 'Photos of grocery stores, food trucks, and other commercial projects',
+      name: 'portfolio',
+      description: 'This is a display of my current projects',
     },
-    { name: 'portraits', description: 'Portraits of people in my life' },
-    { name: 'food', description: 'Delicious delicacies' },
-    { name: 'landscape', description: 'Fields, farmhouses, waterfalls, and the beauty of nature' },
+    { name: 'resume', description: 'Downloadable resume for Jake Nystrom' },
   ]);
 
   const [currentCategory, setCurrentCategory] = useState(categories[0]);
