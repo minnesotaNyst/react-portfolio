@@ -1,63 +1,76 @@
-import React, { useEffect } from 'react';
-import { capitalizeFirstLetter } from '../../utils/helpers';
+import React from 'react';
+// import { capitalizeFirstLetter } from '../../utils/helpers';
 
 function Nav(props) {
-	const {
-		categories = [],
-		setCurrentCategory,
-		contactSelected,
-		currentCategory,
-		setContactSelected
-	} = props;
-
-	useEffect(() => {
-		document.title = capitalizeFirstLetter(currentCategory.name);
-	}, [currentCategory]);
+  const {
+    aboutSelected,
+    setAboutSelected,
+    portfolioSelected,
+    setPortfolioSelected,
+    contactSelected,
+    setContactSelected,
+    resumeSelected,
+    setResumeSelected,
+  } = props;
 
 	return (
-		<header className='flex-row px-1'>
-			<h2>
-				<a data-testid='link' href='/'>
-					Jake Nystrom
-				</a>
-			</h2>
-			<nav>
-				<ul className='flex-row'>
-					<li className='mx-2'>
-						<a
-							data-testid='about'
-							href='#about'
-							onClick={() => setContactSelected(false)}
-						>
-							About me
-						</a>
-					</li>
-					<li className={`mx-2 ${contactSelected && 'navActive'}`}>
-						<span onClick={() => setContactSelected(true)}>Contact</span>
-					</li>
-					{categories.map(category => (
-						<li
-							className={`mx-1 ${
-								currentCategory.name === category.name &&
-								!contactSelected &&
-								'navActive'
-							}`}
-							key={category.name}
-						>
-							<span
-								onClick={() => {
-									setCurrentCategory(category);
-									setContactSelected(false);
-								}}
-							>
-								{capitalizeFirstLetter(category.name)}
-							</span>
-						</li>
-					))}
-				</ul>
-			</nav>
-		</header>
-	);
+    <nav className="collapse navbar-collapse" id="navbarNav">
+      <ul className="navbar-nav">
+        <li
+          className="nav-item mx-4 my-1 py-1"
+          onClick={() => {
+            setAboutSelected(true);
+            setPortfolioSelected(false);
+            setContactSelected(false);
+            setResumeSelected(false);
+          }}
+        >
+          <button className={`nav-btn ${aboutSelected && "navActive"}`}>
+            About Me
+          </button>
+        </li>
+        <li
+          className="nav-item mx-4 my-1 py-1"
+          onClick={() => {
+            setAboutSelected(false);
+            setPortfolioSelected(true);
+            setContactSelected(false);
+            setResumeSelected(false);
+          }}
+        >
+          <button className={`nav-btn ${portfolioSelected && "navActive"}`}>
+            Portfolio
+          </button>
+        </li>
+        <li
+          className="nav-item mx-4 my-1 py-1"
+          onClick={() => {
+            setAboutSelected(false);
+            setPortfolioSelected(false);
+            setContactSelected(true);
+            setResumeSelected(false);
+          }}
+        >
+          <button className={`nav-btn ${contactSelected && "navActive"}`}>
+            Contact Me
+          </button>
+        </li>
+        <li
+          className="nav-item mx-4 my-1 py-1"
+          onClick={() => {
+            setAboutSelected(false);
+            setPortfolioSelected(false);
+            setContactSelected(false);
+            setResumeSelected(true);
+          }}
+        >
+          <button className={`nav-btn ${resumeSelected && "navActive"}`}>
+            Resume
+          </button>
+        </li>
+      </ul>
+    </nav>
+  );
 }
 
 export default Nav;

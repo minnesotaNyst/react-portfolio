@@ -1,45 +1,41 @@
 import React, { useState } from 'react';
-import Nav from './components/Nav';
+import Header from './components/Header';
 import About from './components/About';
+import Footer from './components/Footer';
+import Project from './components/Projects';
+import Contact from './components/Contact';
 import Resume from './components/Resume';
-import Gallery from './components/Gallery';
-import ContactForm from './components/Contact';
 
 function App() {
-	const [categories] = useState([
-		{
-			name: 'portfolio',
-			description: 'This is a display of my current projects'
-		},
-		{ name: 'resume', description: 'Downloadable resume for Jake Nystrom' }
-	]);
-
-	const [currentCategory, setCurrentCategory] = useState(categories[0]);
-
+	const [aboutSelected, setAboutSelected] = useState(true);
+	const [portfolioSelected, setPortfolioSelected] = useState(false);
 	const [contactSelected, setContactSelected] = useState(false);
-
 	const [resumeSelected, setResumeSelected] = useState(false);
 
 	return (
 		<div>
-			<Nav
-				categories={categories}
-				setCurrentCategory={setCurrentCategory}
-				currentCategory={currentCategory}
-				contactSelected={contactSelected}
-				setContactSelected={setContactSelected}
-				resumeSelected={resumeSelected}
-				setResumeSelected={setResumeSelected}
-			></Nav>
 			<main>
-				{!contactSelected ? (
+				<Header
+					aboutSelected={aboutSelected}
+					setAboutSelected={setAboutSelected}
+					portfolioSelected={portfolioSelected}
+					setPortfolioSelected={setPortfolioSelected}
+					contactSelected={contactSelected}
+					setContactSelected={setContactSelected}
+					resumeSelected={resumeSelected}
+					setResumeSelected={setResumeSelected}
+				></Header>
+				{aboutSelected ? (
 					<>
-						<Gallery currentCategory={currentCategory}></Gallery>
 						<About></About>
+					</>
+				) : portfolioSelected ? (
+					<>
+						<Project></Project>
 					</>
 				) : contactSelected ? (
 					<>
-						<ContactForm></ContactForm>
+						<Contact></Contact>
 					</>
 				) : resumeSelected ? (
 					<>
@@ -50,6 +46,7 @@ function App() {
 						<About></About>
 					</>
 				)}
+				<Footer></Footer>
 			</main>
 		</div>
 	);
