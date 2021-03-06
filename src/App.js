@@ -38,14 +38,18 @@ function App() {
 						<About></About>
 					</>
 				) : contactSelected ? (
-          <>
-					<ContactForm></ContactForm>
-          </>
+					<>
+						<ContactForm></ContactForm>
+					</>
 				) : resumeSelected ? (
-          <>
-          <Resume></Resume>
-          </>
-        )}
+					<>
+						<Resume></Resume>
+					</>
+				) : (
+					<>
+						<About></About>
+					</>
+				)}
 			</main>
 		</div>
 	);
