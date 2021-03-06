@@ -13,6 +13,12 @@ function Project() {
 			title: 'Run Buddy',
 			link: 'https://minnesotanyst.github.io/run-buddy/',
 			repo: 'https://github.com/minnesotaNyst/run-buddy'
+		},
+		{
+			image: 'password-gen.png',
+			title: 'Password Generator',
+			link: 'https://minnesotanyst.github.io/pwd-generator/',
+			repo: 'https://github.com/minnesotaNyst/pwd-generator'
 		}
 	]);
 	return (
