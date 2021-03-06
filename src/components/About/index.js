@@ -2,14 +2,15 @@ import React from 'react';
 import coverImage from '../../assets/cover/jakeNystromHeadshot.png';
 function About() {
 	return (
-		<section className='my-5'>
-			<h1 id='about'>Who am I?</h1>
+		<section className='my-5 '>
+			{/* <h1 id='about' className='text-center'>Who am I?</h1> */}
 			<img
 				src={coverImage}
-				className='my-2'
+				className='my-2 mx-auto d-block'
 				style={{ width: '25%' }}
 				alt='Jake Nystrom headshot...'
 			/>
+      <br></br>
 			<div className='my-2'>
 				<p>
 					I love to create positive experiences for customers through

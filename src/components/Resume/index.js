@@ -1,20 +1,25 @@
 import React from 'react';
-import { capitalizeFirstLetter } from '../../utils/helpers';
 
-function Resume(props) {
-	const { currentCategory } = props;
+function Resume() {
 	return (
-		<section>
-			<h1 data-testid='h1tag'>{capitalizeFirstLetter(currentCategory.name)}</h1>
-			<p>{currentCategory.description}</p>
-			<iframe
-				className='iframe'
-				src='/src/assets/resume/jn_resume.pdf'
-				width='100%'
-				height='500px'
-				title='Jake Nystrom Resume'
-			></iframe>
-		</section>
+		<div className='d-flex justify-content-center'>
+			<div id='resume-container' className='font-color m-3 p-2'>
+				<h2 className='font-color text-center pt-2'>My Resume</h2>
+				<h3 className='font-color text-center m-4 p-2'>
+					Download my{' '}
+					<span>
+						{' '}
+						<a
+							className='card-text'
+							href='jn_resume.pdf'
+							download='jn_resume.pdf'
+						>
+							resume.
+						</a>
+					</span>
+				</h3>
+			</div>
+		</div>
 	);
 }
 

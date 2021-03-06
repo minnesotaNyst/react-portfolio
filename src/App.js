@@ -14,17 +14,17 @@ function App() {
 
 	return (
 		<div>
+			<Header
+				aboutSelected={aboutSelected}
+				setAboutSelected={setAboutSelected}
+				portfolioSelected={portfolioSelected}
+				setPortfolioSelected={setPortfolioSelected}
+				contactSelected={contactSelected}
+				setContactSelected={setContactSelected}
+				resumeSelected={resumeSelected}
+				setResumeSelected={setResumeSelected}
+			></Header>
 			<main>
-				<Header
-					aboutSelected={aboutSelected}
-					setAboutSelected={setAboutSelected}
-					portfolioSelected={portfolioSelected}
-					setPortfolioSelected={setPortfolioSelected}
-					contactSelected={contactSelected}
-					setContactSelected={setContactSelected}
-					resumeSelected={resumeSelected}
-					setResumeSelected={setResumeSelected}
-				></Header>
 				{aboutSelected ? (
 					<>
 						<About></About>
