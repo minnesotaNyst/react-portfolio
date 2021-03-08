@@ -289,3 +289,11 @@ a {
 .navActive {
 	color: var(--secondary);
 }
+
+#project-container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	background-color: var(--primary);
+}
