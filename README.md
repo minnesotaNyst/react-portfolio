@@ -53,6 +53,10 @@ Thanks for looking at my Portfolio, my name is Jake Nystrom! If you would like t
 
 Today, as a motivated and goal oriented individual I embrace challenges, strive to help others learn and develop, work collaboratively with teams, and push myself to further develop my current skill set with an expectation to succeed. I thrive in high paced environments where teams are setup for success.
 
+## Deployed
+
+- https://minnesotanyst.github.io/react-portfolio/
+
 ## Screenshot
 
 ![jake-react-portfolio](./src/assets/projects/react-portfolio.png)
